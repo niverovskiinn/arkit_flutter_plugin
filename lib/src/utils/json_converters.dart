@@ -471,7 +471,7 @@ class Vector3ListConverter
 
   @override
   List<dynamic> toJson(List<Vector3> vectorList) {
-    final res = List.filled(vectorList.length, List.filled(3, 0.0));
+    final res = List.generate(vectorList.length, (_) => List.filled(3, 0.0));
     for (var i = 0; i < res.length; i++) {
       vectorList[i].copyIntoArray(res[i]);
     }
